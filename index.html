@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style type="text/css">
+    *{margin: 0;padding: 0;box-sizing: border-box;font-size: 10px;}
+    .dem1{float: left;}
+    #dem{margin-top: 5px;}
+    
+    
+    #ul1{list-style: none;background-color: olive;width: 100%;height: 3rem;padding-top: 0.25rem;font-size:3rem;}
+    li{float: left;background-color: green;width: 10%;height: 2.5rem;text-align: center;border-right:.2rem solid black;padding-top: .2rem;}
+    .li1{float: right;height: 2.5rem;font-size: 1.3rem;}
+    #search{margin-right: 3%;}
+    input{width: ;}
+    .launch1,.launch2,.launch3{width: 30%;background-color:rgba(0, 250, 0, .5);text-align: center;height: 3rem;border: .2rem solid black;padding-top: .5rem;margin: 4%;font-size: 1.3rem;}
+
+    /********************************ADD IMAGE CSS***********************/
+  img{width: 20rem;height: 20rem;}
+.demo4{width: 100%;background-color:rgba(0, 0, 250,.1);}
+.demo6{width: 100%;background-color:rgba(0, 0, 250,.1);display: flex;flex-wrap: wrap;}
+.demo7{width: 20rem;height:;background-color: rgba(0, 0, 0, .10);padding:.5rem;}
+.demo10{width: 20rem;height:;margin:3%;background-color: rgba(0, 0, 250, .3);margin-bottom: 1rem;float: left;}
+.spa1{ color: blue;font-size:1.2rem; }
+ 
+ /*********************************Number of item found**********************************************/
+#itm1{width: 100%;height: 2.5rem;background-color: rgba(0, 250, 0, .3);text-align: center;padding-top:.4rem;font-size:2.5rem;}
+#itm2{color: red;font-size: 1.5rem;}
+.nav1{font-size: 1.7rem;}
+.media1{width: 20%;}
+#nav2a{display: block;}
+.media2{width: 79%;}
+
+/****************************media@******************************/
+
+
+@media screen and (max-width: 660px) {
+
+  .media1 {width: 100%;}
+  #nav2a{display: none;}
+.demo10,.demo7{width: 100%;margin:0;margin-top: 1.5rem;}
+  .media2{display: flex;justify-content: center;align-items: center;margin-top: 2rem;margin-right:rem;background-color: white;width:100%;}
+
+}
+
+
+  </style>
+
+</head>
+<body>
+<h1 style="text-align:center;background-color:blue;text-transform: capitalize;color:white;font-size:4rem;"> launch programs</h1>
+<section id="nav2a">
+  <div>
+    <ul id="ul1">
+      <li class="nav1">home</li>
+      <li class="nav1">about</li>
+      <li class="nav1">about</li>
+      <li class="nav1">project</li>
+      <li class="nav1">product</li>
+      <li class="nav1">libery</li>
+      <div id="search">
+    <button class="li1">
+        Search</button>
+  <input class="li1" type="text" name="flw"size="14">
+      </div>
+    </ul>
+  </div>
+</section>
+<section>
+  <div id="itm1"><h4 style="font-size:1.5rem;">Number of item found : <span id="itm2"></span></h4></div>
+</section>
+<div id="dem">
+  <div class="dem1 media1" style="background-color: rgba(0, 0, 250, .1);height:;">
+    <h1 style="font-size:2.5rem;">Filters</h1>
+    <h5 style="text-align: center;font-size: 1.5rem;">Launch Year</h5><hr style="width:100%;text-align: center;">
+<ul style="list-style: none;">
+  <li class="launch1">2006</li>
+  <li class="launch1">2007</li>
+  <li class="launch1">2008</li>
+  <li class="launch1">2009</li>
+  <li class="launch1">2010</li>
+  <li class="launch1"di="li11">2011</li>
+  <li class="launch1">2012</li>
+  <li class="launch1">2013</li>
+  <li class="launch1">2014</li>
+  <li class="launch1">2015</li>
+  <li class="launch1">2016</li>
+  <li class="launch1">2017</li>
+  <li class="launch1">2018</li>
+  <li class="launch1">2019</li>
+  <li class="launch1">2020</li>
+  
+</ul>
+<h5 style="clear:left;text-align: center;font-size: 1.5rem;">Successful Launch</h5><hr>
+<ul style="list-style: none;">
+  <li class="launch2">true</li>
+  <li class="launch2">false</li>
+</ul>
+<h5 style="clear:left;text-align: center;font-size: 1.5rem;">Successful Landing</h5><hr>
+<ul style="list-style: none;">
+  <li class="launch3">true</li>
+  <li class="launch3">false</li>
+</ul>
+
+  </div>
+  <div class="dem1 media2" style="background-color: rgba(0, 0, 250, 0.1);height:;float:right;padding-left: ;display: flex;flex-wrap: wrap;">
+
+
+<!--     ******************************ADD API IMAGE*************************** -->
+    
+<div class="demo4">
+    <div id="demo1"class="demo6"></div>
+    
+
+  </div>
+
+
+  </div>
+
+</div>
+
+
+<footer style="text-align:center;background-color: rgba(0, 0, 250, .8);display: block;clear:both;font-size:2rem;"><span>Developed by :</span><i style="color:white;">SUBHASH CHANDRA YADAV</i></footer>
+<script type="text/javascript">
+  //*************************ADD IMAGE API***************************
+  fetch('https://api.spaceXdata.com/v3/launches?limit=100').then((apidata)=>{return apidata.json()}).then((apida)=>{console.log(apida);
+    var c =apida ;
+console.log(c.length);
+
+
+  var m = document.getElementsByClassName("demo10");
+  var item2 =document.getElementById("itm2");
+
+
+   var i;
+for(i=0;i<100;i++){
+let n =c[i].links.mission_patch;
+var g=c[i];
+var x=g.links.mission_patch;
+document.getElementsByClassName("launch1")[0].style.backgroundColor="green";
+var b= "<span class='spa1'>"+g.mission_name+" # "+g.flight_number+"</span>"+"<br>"+" Launch Year : "+g.launch_year+"<br>"+"successfull Launch : "+g.launch_success;
+
+  if(parseInt(c[i].launch_year)===2006){
+    document.getElementById("demo1").innerHTML +='<div class="demo10"><img src="'+x+'">'+"<div class='demo7'>"+b+"</div></div>";
+   item2.innerHTML = m.length;
+  }
+}
+  //***********************************FILTER***********************************************
+  
+var lunc = document.getElementsByClassName("launch1");
+var j;
+for(j=0;j<lunc.length;j++){
+lunc[j].addEventListener("click",myfun);
+
+function myfun(){
+  for(k=0;k<lun.length;k++){
+lun[k].style.backgroundColor="rgba(0, 250, 0, .5)";
+}
+  for(j=0;j<lunc.length;j++){
+lunc[j].style.backgroundColor="rgba(0, 250, 0, .5)";
+document.getElementById("demo1").innerHTML=" ";
+if(j===5){
+item2.innerHTML=0;
+}
+}
+
+  this.style.backgroundColor="green";
+       var i;
+for(i=0;i<100;i++){
+var n =c[i].links.mission_patch;
+var g=c[i];
+var x=g.links.mission_patch;
+var b= "<span class='spa1'>"+g.mission_name+" # "+g.flight_number+"</span>"+"<br>"+" Launch Year : "+g.launch_year+"<br>"+"successfull Launch : "+g.launch_success;
+   var w=c[i].launch_success;
+var y  = c[i].launch_year;
+  if(parseInt(y)===parseInt(this.innerText)){
+  document.getElementById("demo1").innerHTML +='<div class="demo10"><img src="'+x+'">'+"<div class='demo7'>"+b+"</div></div>";
+   
+   item2.innerHTML = m.length; 
+
+ }
+}
+}
+}
+  //*****************************************launch true\false************************
+  var lun = document.getElementsByClassName("launch2");
+var k;
+
+
+
+for(k=0;k<lun.length;k++){
+lun[k].addEventListener("click",myfun1)
+
+function myfun1(){
+    for(j=0;j<lunc.length;j++){
+lunc[j].style.backgroundColor="rgba(0, 250, 0, .5)";
+}
+    for(k=0;k<lun.length;k++){
+lun[k].style.backgroundColor="rgba(0, 250, 0, .5)";
+document.getElementById("demo1").innerHTML=" ";
+
+}
+  this.style.backgroundColor="green";
+}}
+
+
+
+document.getElementsByClassName("launch2")[0].addEventListener("click",myf);
+function myf(){
+
+         var i;
+for(i=0;i<100;i++){
+var n =c[i].links.mission_patch;
+var g=c[i];
+var x=g.links.mission_patch;
+var b= "<span class='spa1'>"+g.mission_name+" # "+g.flight_number+"</span>"+"<br>"+" Launch Year : "+g.launch_year+"<br>"+"successfull Launch : "+g.launch_success;
+   var w=c[i].launch_success;
+var y  = c[i].launch_year;
+
+if(Boolean(w)===true){
+
+     document.getElementById("demo1").innerHTML +='<div class="demo10"><img src="'+x+'">'+"<div class='demo7'>"+b+"</div></div>";
+   item2.innerHTML = m.length; 
+}   
+     }  
+   };
+     document.getElementsByClassName("launch2")[1].addEventListener("click",myf1);
+function myf1(){
+       var i;
+for(i=0;i<100;i++){
+var n =c[i].links.mission_patch;
+var g=c[i];
+var x=g.links.mission_patch;
+var b= "<span class='spa1'>"+g.mission_name+" # "+g.flight_number+"</span>"+"<br>"+" Launch Year : "+g.launch_year+"<br>"+"successfull Launch : "+g.launch_success;
+   var w=c[i].launch_success;
+var y  = c[i].launch_year;
+if(Boolean(w)===false){
+
+     document.getElementById("demo1").innerHTML +='<div class="demo10"><img src="'+x+'">'+"<div class='demo7'>"+b+"</div></div>";
+    
+   item2.innerHTML = m.length; 
+}   
+     }  };
+
+
+//**********************************end****************************
+
+}); 
+
+</script>
+
+</body>
+</html>
